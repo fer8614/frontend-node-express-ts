@@ -1,10 +1,25 @@
-import { Link, Form } from "react-router-dom";
+import { Link, Form, useActionData } from "react-router-dom";
 
-export async function action() {
-  console.log("from action");
+export async function action({ request }) {
+  const data = Object.fromEntries(await request.formData());
+
+  let error = "";
+  if (Object.values(data).includes("")) {
+    error = "All fields are required";
+  }
+  if (error.length) {
+    return error;
+  }
+
+  console.log(error);
+
   return {};
 }
 export default function NewProduct() {
+  const error = useActionData();
+
+  console.log(error);
+
   return (
     <>
       <div className="flex justify-between">
