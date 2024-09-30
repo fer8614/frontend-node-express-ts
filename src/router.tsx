@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./layouts/Layout";
-import Products from "./views/Product";
+import Products from "./views/Products";
 import { loader as productsLoader } from "./components/ProductLoader";
 import { action as newProductAction } from "./components/ProductServiceAction";
 import NewProduct from "./views/NewProduct";
