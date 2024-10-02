@@ -4,7 +4,7 @@ import Products from "./views/Products";
 import { loader as productsLoader } from "./components/ProductLoader";
 import { action as newProductAction } from "./components/ProductServiceAction";
 import NewProduct from "./views/NewProduct";
-import EditProduct from "./views/EditProduct";
+import EditProduct, { loader as editProductLoader } from "./views/EditProduct";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +25,7 @@ export const router = createBrowserRouter([
         // ROA Pattern - Resource-oriented design
         path: "products/:id/edit",
         element: <EditProduct />,
+        loader: editProductLoader,
       },
     ],
   },

@@ -1,5 +1,15 @@
-import { Link, Form, useActionData } from "react-router-dom";
+import {
+  Link,
+  Form,
+  useActionData,
+  LoaderFunctionArgs,
+} from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
+
+export async function loader({ params }: LoaderFunctionArgs) {
+  console.log(params.id);
+  return {};
+}
 
 export default function EditProduct() {
   const error = useActionData() as string;
