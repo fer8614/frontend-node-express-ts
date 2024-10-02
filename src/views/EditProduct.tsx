@@ -1,6 +1,6 @@
 import { Link, Form, useActionData, useLoaderData } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
-import { Product } from "../types";
+import type { Product } from "../types";
 
 export default function EditProduct() {
   const product = useLoaderData() as Product;
@@ -17,9 +17,7 @@ export default function EditProduct() {
           Back to Products
         </Link>
       </div>
-
-      {error && <ErrorMessage>{error}</ErrorMessage>}
-
+      <div className="p-2">{error && <ErrorMessage>{error}</ErrorMessage>}</div>
       <Form className="mt-10" method="POST">
         <div className="mb-4">
           <label className="text-gray-800" htmlFor="name">

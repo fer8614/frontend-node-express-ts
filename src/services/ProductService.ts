@@ -5,11 +5,8 @@ import {
   ProductsSchema,
   Product,
   ProductSchema,
+  ProductData,
 } from "../types";
-
-type ProductData = {
-  [k: string]: FormDataEntryValue;
-};
 
 export async function addProduct(data: ProductData) {
   try {
@@ -61,4 +58,10 @@ export async function getProductsById(id: Product["id"]) {
   } catch (error) {
     console.log(error);
   }
+}
+
+export async function updateProduct(data: ProductData, id: Product["id"]) {
+  console.log(data);
+
+  console.log(id);
 }

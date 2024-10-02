@@ -14,3 +14,7 @@ export const ProductSchema = object({
 
 export const ProductsSchema = array(ProductSchema);
 export type Product = InferOutput<typeof ProductSchema>;
+
+export type ProductData = {
+  [k: string]: FormDataEntryValue;
+};
