@@ -1,17 +1,9 @@
-import {
-  Link,
-  Form,
-  useActionData,
-  LoaderFunctionArgs,
-} from "react-router-dom";
+import { Link, Form, useActionData, useLoaderData } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
-
-export async function loader({ params }: LoaderFunctionArgs) {
-  console.log(params.id);
-  return {};
-}
+import { Product } from "../types";
 
 export default function EditProduct() {
+  const product = useLoaderData() as Product;
   const error = useActionData() as string;
 
   return (
@@ -39,6 +31,7 @@ export default function EditProduct() {
             className="mt-2 block w-full p-3 bg-gray-50"
             placeholder="Name of Product. ej. TV, Laptop"
             name="name"
+            defaultValue={product.name}
           />
         </div>
         <div className="mb-4">
@@ -51,6 +44,7 @@ export default function EditProduct() {
             className="mt-2 block w-full p-3 bg-gray-50"
             placeholder="Price of Product. ej. 300"
             name="price"
+            defaultValue={product.price}
           />
         </div>
         <input
