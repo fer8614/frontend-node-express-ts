@@ -1,6 +1,7 @@
 import { Link, Form, useActionData, useLoaderData } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
 import type { Product } from "../types";
+import ProductForm from "../components/ProductForm";
 
 const availabilityOptions = [
   { name: "Available", value: true },
@@ -24,32 +25,7 @@ export default function EditProduct() {
       </div>
       <div className="p-2">{error && <ErrorMessage>{error}</ErrorMessage>}</div>
       <Form className="mt-10" method="POST">
-        <div className="mb-4">
-          <label className="text-gray-800" htmlFor="name">
-            Name Product:
-          </label>
-          <input
-            id="name"
-            type="text"
-            className="mt-2 block w-full p-3 bg-gray-50"
-            placeholder="Name of Product. ej. TV, Laptop"
-            name="name"
-            defaultValue={product.name}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="text-gray-800" htmlFor="price">
-            Price:
-          </label>
-          <input
-            id="price"
-            type="number"
-            className="mt-2 block w-full p-3 bg-gray-50"
-            placeholder="Price of Product. ej. 300"
-            name="price"
-            defaultValue={product.price}
-          />
-        </div>
+        <ProductForm product={product} />
 
         <div className="mb-4">
           <label className="text-gray-800" htmlFor="availability">
@@ -71,7 +47,7 @@ export default function EditProduct() {
         <input
           type="submit"
           className="mt-5 w-full bg-indigo-600 p-2 text-white font-bold text-lg cursor-pointer rounded"
-          value="Register Product"
+          value="Save Changes"
         />
       </Form>
     </>

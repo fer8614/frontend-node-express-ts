@@ -1,19 +1,19 @@
-import { number, string, boolean, array, object, InferOutput } from "valibot";
+import * as v from "valibot";
 
-export const DraftProductSchema = object({
-  name: string(),
-  price: number(),
+export const DraftProductSchema = v.object({
+  name: v.string(),
+  price: v.number(),
 });
 
-export const ProductSchema = object({
-  id: number(),
-  name: string(),
-  price: number(),
-  availability: boolean(),
+export const ProductSchema = v.object({
+  id: v.number(),
+  name: v.string(),
+  price: v.number(),
+  availability: v.boolean(),
 });
 
-export const ProductsSchema = array(ProductSchema);
-export type Product = InferOutput<typeof ProductSchema>;
+export const ProductsSchema = v.array(ProductSchema);
+export type Product = v.InferOutput<typeof ProductSchema>;
 
 export type ProductData = {
   [k: string]: FormDataEntryValue;
