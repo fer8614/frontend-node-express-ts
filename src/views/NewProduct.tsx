@@ -17,7 +17,7 @@ export default function NewProduct() {
         </Link>
       </div>
 
-      {error && <ErrorMessage>{error}</ErrorMessage>}
+      <div className="p-2">{error && <ErrorMessage>{error}</ErrorMessage>}</div>
 
       <Form className="mt-10" method="POST">
         <ProductForm />

@@ -8,6 +8,7 @@ import NewProduct from "./views/NewProduct";
 import { EditProductLoader } from "./components/EditProductLoader";
 import EditProduct from "./views/EditProduct";
 import { DeleteProductAction } from "./components/DeleteProductAction";
+import { UpdateAvailabilityAction } from "./components/UpdateAvailabilityAction";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
         index: true,
         element: <Products />,
         loader: ProductsLoader,
+        action: UpdateAvailabilityAction,
       },
       {
         path: "products/new",
