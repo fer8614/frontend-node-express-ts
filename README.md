@@ -1,4 +1,4 @@
-# BankEnd - PERN Stack - Product Manager
+# FrontEnd - PERN Stack - Product Manager
 
 ## Table of Contents
 - [Description](#description)
